@@ -1,0 +1,80 @@
+html{
+    margin: 0px;
+}
+.HomeContainer{
+    height: 1000px;
+    background-image:url("./imgs/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    .row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .formContainer{
+        display: flex;
+        justify-content: center;
+        height: 100px;
+        
+        input{
+            
+            background-color: transparent;
+            border: solid 1px black; 
+            
+        }
+    }
+
+    
+}
+.alert{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    margin-bottom: 5px;
+
+}
+
+.NavContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-image: url("./imgs/stormy.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    a{
+        color:white;
+        padding: 10px;
+        font-size: 30px;
+        text-decoration: none;
+           
+    }
+   
+        
+    
+}
+
+.reviews{
+    
+    background-image: url("./imgs/woods.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+    padding-top: 50px;
+    
+    
+
+    
+}
+
+.newReview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+

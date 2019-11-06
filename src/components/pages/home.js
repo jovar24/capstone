@@ -102,7 +102,7 @@ class Home extends React.Component {
     }
     render() {
         return (
-            <div className="" >
+            <div className="HomeContainer" >
                 <Form loadWeather={this.getWeather} error={this.state.error} />
                 <Weather
                     city={this.state.city}

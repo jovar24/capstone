@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
-import './styles/main.scss';
+import '../styles/main.scss';
 import Home from "./pages/home"
 import "weather-icons/css/weather-icons.css"
 import Review from "./pages/reviews"

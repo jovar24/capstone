@@ -4,13 +4,14 @@ import NewRev from './newrev'
 
 const Review = () => {
     const [content, setContent] = React.useState([])
+    const [test, setTest] = React.useState(false)
 
     React.useEffect(() => {
         getReviewPosts()
-        renderContent()
-    }, [])
+    }, [test])
 
     React.useEffect(() => {
+        console.log("updating reviews")
         renderContent()
     }, [content])
 
@@ -24,19 +25,25 @@ const Review = () => {
             })
     }
     const renderContent = () => {
+        let counter = 1
         return content.map(elem => {
-            return <p>{elem.content}</p>
+            counter += 1
+            return <p key={counter}> {elem.content}</p >
         })
     }
 
 
+
+
+
+
+
+
     return (
-        <div className="container">
-            {console.log(content)}
-            <div>
-                {renderContent()}
-            </div>
-            <NewRev />
+        <div className="reviews">
+
+            {renderContent()}
+            <NewRev setTest={setTest} test={test} />
 
         </div>
     )
