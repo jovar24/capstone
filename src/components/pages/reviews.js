@@ -16,7 +16,7 @@ const Review = () => {
     }, [content])
 
     const getReviewPosts = () => {
-        axios.get('http://localhost:5000/reviews')
+        axios.get('https://secret-escarpment-59245.herokuapp.com/reviews')
             .then(response => {
                 setContent(response.data)
             })

@@ -12,7 +12,7 @@ const NewRev = (props) => {
         event.preventDefault();
 
         axios
-            .post('http://localhost:5000/review', {
+            .post('https://secret-escarpment-59245.herokuapp.com/review', {
                 "title": "",
                 "content": content
             })
