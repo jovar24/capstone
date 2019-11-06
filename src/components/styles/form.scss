@@ -1,0 +1,13 @@
+form{
+  text-align: center;
+  margin-top: 3rem;
+  input{
+    background-color: transparent;
+    border-bottom: 2px solid whitesmoke; 
+    border-radius: 0px;
+  }
+  input:focus{
+      background-color: transparent;
+      box-shadow: none !important;
+  }
+}
