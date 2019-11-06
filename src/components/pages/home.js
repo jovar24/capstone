@@ -20,6 +20,7 @@ class Home extends React.Component {
             temp_min: undefined,
             description: "",
             error: false,
+            error2: false
         }
 
 
@@ -82,20 +83,27 @@ class Home extends React.Component {
             const response = await api_call.json()
 
             console.log(response)
+            if (response.message === "city not found" || response.message === "country not found") {
+                this.setState({
+                    error2: true,
+                    error: false
+                })
+            } else {
+                this.setState({
+                    city: `${response.name},${response.sys.country}`,
+                    Farenheit: this.calFaren(response.main.temp),
+                    temp_max: this.calFaren(response.main.temp_max),
+                    temp_min: this.calFaren(response.main.temp_min),
+                    description: response.weather[0].description,
+                    error: false,
+                    error2: false
 
-            this.setState({
-                city: `${response.name},${response.sys.country}`,
-                Farenheit: this.calFaren(response.main.temp),
-                temp_max: this.calFaren(response.main.temp_max),
-                temp_min: this.calFaren(response.main.temp_min),
-                description: response.weather[0].description,
-                error: false,
-
-            })
-            this.getWeatherIcon(this.weathericon, response.weather[0].id)
+                })
+                this.getWeatherIcon(this.weathericon, response.weather[0].id)
+            }
 
         } else {
-            this.setState({ error: true })
+            this.setState({ error: true, error2: false })
 
         }
 
@@ -103,7 +111,7 @@ class Home extends React.Component {
     render() {
         return (
             <div className="HomeContainer" >
-                <Form loadWeather={this.getWeather} error={this.state.error} />
+                <Form loadWeather={this.getWeather} error={this.state.error} error2={this.state.error2} />
                 <Weather
                     city={this.state.city}
                     country={this.state.country}

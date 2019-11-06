@@ -4,6 +4,7 @@ const Form = (props) => {
     return (
         <div className="formContainer">
             <div>{props.error ? error() : null}</div>
+            <div>{props.error2 ? error2() : null}</div>
             <form onSubmit={props.loadWeather}>
                 <div className="row">
                     <div className="city">
@@ -25,6 +26,14 @@ function error() {
     return (
         <div className=" alert alert-danger" role="alert">
             Please Enter City and Country
+        </div>
+    )
+}
+
+function error2() {
+    return (
+        <div className="alert alert-danger" role="alert">
+            please Enter valid City
         </div>
     )
 }
